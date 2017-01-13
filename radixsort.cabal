@@ -1,0 +1,43 @@
+name:                radixsort
+version:             0.1.0.0
+synopsis:            Initial project template from stack
+description:         Please see README.md
+homepage:            https://github.com/jasonaowen/radixsort#readme
+license:             GPL-3
+license-file:        LICENSE
+author:              Jason Owen <jason.a.owen@gmail.com>
+maintainer:          Jason Owen <jason.a.owen@gmail.com>
+copyright:           2017 Jason Owen
+category:            Algorithms
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Lib
+  build-depends:       base >= 4.7 && < 5
+  default-language:    Haskell2010
+
+executable radixsort-exe
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , radixsort
+  default-language:    Haskell2010
+
+test-suite radixsort-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , radixsort
+                     , hspec
+                     , QuickCheck
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/jasonaowen/radixsort
